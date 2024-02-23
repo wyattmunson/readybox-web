@@ -1,24 +1,24 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1>{% block title %} Status Page {% endblock %}</h1>
 <p>Status page of operations.</p>
 
 <div class="row">
+  {% for page in pages %}
+  <!-- <div class="col"> -->
 
-    {% for page in pages %}
-    <!-- <div class="col"> -->
-
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{ page['displayName'] }}</h5>
-            <p class="card-text">{{ page['description'] }}</p>
-            <a href="{{ page['link'] }}" class="btn btn-primary">{{ page['displayName'] }}</a>
-        </div>
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ page['displayName'] }}</h5>
+      <p class="card-text">{{ page['description'] }}</p>
+      <a href="{{ page['link'] }}" class="btn btn-primary"
+        >{{ page['displayName'] }}</a
+      >
     </div>
-    <!-- </div> -->
-    {% endfor %}
+  </div>
+  <!-- </div> -->
+  {% endfor %}
 </div>
-
-{% endblock %}
+{% set loader=False %} {% if loader %}
+<p>Loading</p>
+{% endif %} {% endblock %}

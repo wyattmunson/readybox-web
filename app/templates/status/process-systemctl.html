@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} Systemctl Panel: {{ title }}{% endblock %}</h1>
+<p>Status page of operations.</p>
+<span>For: {{ cmd }}</span>
+
+<br />
+<button class="btn btn-outline-primary" onclick="window.location.reload()">
+  <i class="fa-solid fa-rotate"></i> Refresh
+</button>
+<!-- <code>{{ data.stdout.decode().splitlines() }}</code> -->
+<code>
+  {%for i in range(0, data.stdout.decode().splitlines()|length)%}
+  <div>{{ data.stdout.decode().splitlines()[i] }}</div>
+  {%endfor%}
+</code>
+
+<h3>Commands</h3>
+
+<br />
+<a class="btn btn-primary" href="/api/start/{{ cmd }}"
+  ><i class="fa-regular fa-circle-play"></i> Start</a
+>
+<a class="btn btn-danger" href="/api/stop/{{ cmd }}"
+  ><i class="fa-regular fa-circle-stop"></i> Stop</a
+>
+<a class="btn btn-warning" href="/api/restart/{{ cmd }}">Restart</a>
+<a class="btn btn-success" href="/api/enable/{{ cmd }}"
+  ><i class="fa-solid fa-flag-checkered"></i> Enable</a
+>
+<a class="btn btn-danger" href="/api/disable/{{ cmd }}"
+  ><i class="fa-solid fa-ban"></i> Disable</a
+>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} Packages and Versions {% endblock %}</h1>
+<p>Status page of operations.</p>
+
+{% for p in package_list %}
+<h4>{{ p }}</h4>
+<!-- <p>{{ package_list[p] }}</p> -->
+{% if package_list[p]['result'] != 'Not installed' %}
+<p>
+  <i class="fa-regular fa-circle-check cSuccess"></i> {{
+  package_list[p]['result'].stdout.decode().splitlines()[0] }}
+</p>
+{% else %}
+<p><i class="fa-regular fa-circle-xmark cDanger"></i> Not installed</p>
+
+{% endif %} {% endfor %}
+
+<pre>Update versions</pre>
+{% endblock %}

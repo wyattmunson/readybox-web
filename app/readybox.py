@@ -121,6 +121,7 @@ def status_process_cmd(cmd_):
 def get_status_general():
     data = {}
     result = subprocess.run(['uname', '-a'], stdout=subprocess.PIPE)
+    data['uname'] = subprocess.run(['uname', '-a'], stdout=subprocess.PIPE)
     data['date'] = subprocess.run(['date'], stdout=subprocess.PIPE)
     data['uptime'] = subprocess.run(['uptime'], stdout=subprocess.PIPE)
     data['kernel'] = subprocess.run(['uname', '-s'], stdout=subprocess.PIPE)

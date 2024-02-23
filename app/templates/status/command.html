@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} System Information {% endblock %}</h1>
+<p>Status page of operations.</p>
+
+<h3>{{ title }}</h3>
+<pre>{{ data.stdout.decode() }}</pre>
+<ul>
+  <li>
+    <a href="/status/process/apache2">apache2</a>
+  </li>
+
+  <li>
+    <a href="/status/process/NetworkManager">NetworkManager</a>
+  </li>
+</ul>
+
+{% endblock %}
