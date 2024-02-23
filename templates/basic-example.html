@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Status Page {% endblock %}</h1>
+<p>Status page of operations.</p>
+
+<a class="btn btn-primary" href="/status/general">General</a>
+<a class="btn btn-primary" href="/status/process">Processes</a>
+{% endblock %}

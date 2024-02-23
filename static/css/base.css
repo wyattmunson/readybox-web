@@ -1,0 +1,44 @@
+.qCenter {
+  text-align: center;
+}
+
+.mainContainer {
+  margin: 1rem 0;
+}
+
+.libraryRowDiv {
+  border: 1px black solid;
+  border-radius: 3px;
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.cDanger {
+  color: var(--bs-danger);
+}
+
+.cSuccess {
+  color: var(--bs-success);
+}
+
+.childDiv {
+  margin: 0 0 0 0.25rem;
+  /* border: 1px blue solid; */
+}
+
+.iconBox {
+  margin: 2rem 0;
+}
+
+.iconBox i {
+  margin-bottom: 1.5rem;
+  /* color: rgba(var(--bs-danger)) */
+}
+
+.iconBoxFailure i {
+  color: var(--bs-danger);
+}
+
+.iconBoxSuccess i {
+  color: var(--bs-success);
+}

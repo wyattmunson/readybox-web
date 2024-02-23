@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Library {% endblock %}</h1>
+<p>Status page of operations.</p>
+
+<ul>
+    {%for i in range(0, data.stdout.decode().splitlines()|length)%}
+    <li>
+        <a href="/api/open?file_path={{ data.stdout.decode().splitlines()[i] }}">
+
+            {{ data.stdout.decode().splitlines()[i].replace("/home/watchtower/Desktop", "") }}
+        </a>
+    </li>
+    {%endfor%}
+</ul>
+
+{% for k in tree recursive %}
+<div class="libraryRowDiv">
+
+    <a href="/api/open?file_path={{ k['path'] }}">
+
+        <span>
+            {% if k['type'] == "folder" %}<i class="fa-regular fa-folder"></i>{% endif %}
+            {% if k['type'] == "file" %}<i class="fa-regular fa-file"></i>{% endif %}
+            {{ k['name'] }}
+        </span>
+    </a>
+
+    {% if k['children'] %}
+    <div class="childDiv">
+        <!-- recursively call children -->
+        {{ loop(k['children']) }}
+    </div>
+    {% endif %}
+</div>
+{% endfor %}
+
+{{ tree }}
+<ul>
+
+</ul>
+
+{% endblock %}

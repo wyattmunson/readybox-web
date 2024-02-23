@@ -1,0 +1,19 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskBlog</title>
+</head>
+<body>
+   <h1>Welcome to FlaskBlog</h1>
+</body>
+</html> -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} ReadyBox Admin Console {% endblock %}</h1>
+    <!-- <button class="btn btn-primary">Test</button> -->
+    <a class="btn btn-primary" href="/library">Library</a>
+    <a class="btn btn-primary" href="/status">Status</a>
+{% endblock %}
