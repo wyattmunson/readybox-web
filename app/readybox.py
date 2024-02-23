@@ -27,6 +27,22 @@ def get_status():
 
     return render_template('status.html', pages=page_options)
 
+@app.route("/launchpad")
+def launchpad():
+    # result = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE)
+    # print(result.stdout)
+    # return result.stdout.decode()
+
+    page_options = [
+        { 'displayName': "Firefox", 'link': "/status/general", 'description': 'System OS and machine specifications'},
+        { 'displayName': "Systemctl", 'link': "/status/process", 'description': 'Manage systemctl services and view logs'},
+        { 'displayName': "Versions", 'link': "/status/versions", 'description': 'Check installed packages and versions'}
+    ]
+    def tester():
+        print("GOTTEM")
+
+    return render_template('launchpad.html', pages=page_options)
+
 @app.route("/render")
 def render_cmd():
 

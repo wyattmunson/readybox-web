@@ -1,0 +1,7 @@
+setup.py
+readybox/readybox.py
+readybox.egg-info/PKG-INFO
+readybox.egg-info/SOURCES.txt
+readybox.egg-info/dependency_links.txt
+readybox.egg-info/requires.txt
+readybox.egg-info/top_level.txt

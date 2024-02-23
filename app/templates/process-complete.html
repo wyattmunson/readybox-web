@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>
+  {% block title %} Task {{ 'complete' if status == 0 else 'failed' }} {%
+  endblock %}
+</h1>
+{% if status == 0 %}
+<p>A background process was triggered and completed successfully.</p>
+{% else %}
+<p>A background process was triggered and completed.</p>
+{% endif %} {% if status == 0 %}
+<div class="qCenter iconBox iconBoxSuccess">
+  <i class="fa-regular fa-circle-check fa-5x"></i>
+  <br />
+  <h5>Command successful</h5>
+</div>
+{% endif %} {% if status != 0 %}
+<div class="qCenter iconBox iconBoxFailure">
+  <i class="fa-regular fa-times-circle fa-5x"></i>
+  <br />
+  <h5>Command failed</h5>
+  <h6>Status code: {{ status }}</h6>
+</div>
+{% endif %}
+
+<div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button" onclick="window.history.back()">
+    Go Back
+  </button>
+</div>
+{% endblock %}
