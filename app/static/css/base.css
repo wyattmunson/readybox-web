@@ -42,3 +42,8 @@
 .iconBoxSuccess i {
   color: var(--bs-success);
 }
+
+.displayCard {
+  width: 18rem;
+  margin: 0 0.5rem 0.5rem 0;
+}

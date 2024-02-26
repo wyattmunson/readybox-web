@@ -7,7 +7,7 @@ import app.status.logic as tester
 def index():
     page_options = tester.get_status_cats()
 
-    return render_template('status/status.html', pages=page_options)
+    return render_template('status/status.html', pages=page_options, title_text='Status Overview')
 
 @bp.route('/general/')
 def categories():
